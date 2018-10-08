@@ -39,8 +39,13 @@ public class Transaksi {
         return namaBarang;
     }
 
-    public void setNamaBarang(String namaBarang) {
-        this.namaBarang = namaBarang;
+    public void setNamaBarang(String namaBarang) throws Exception {
+        if(namaBarang.length() <= 25){
+            this.namaBarang = namaBarang;
+        } else{
+            throw new Exception ("Melebihi dari 25 karakter");
+        }
+        
     }
 
     public int getJumlah() {
